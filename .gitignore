@@ -12,3 +12,10 @@ logs
 results
 
 npm-debug.log
+
+.DS_Store
+node_modules/
+.idea/
+doc/
+coverage/
+site/

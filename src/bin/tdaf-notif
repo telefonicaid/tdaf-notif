@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+
+var tdafNotifier = require('../lib/tdaf-notif');
+
+tdafNotifier.start(function(err) {
+      if(err) {
+        console.log("ERROR", err);
+      }
+      else {
+        console.log("Server started");
+      }
+    });

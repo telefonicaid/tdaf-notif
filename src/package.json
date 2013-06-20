@@ -1,0 +1,53 @@
+{
+  "name": "tdaf-notif",
+  "description": "Notification endpoint for TDAF",
+  "version": "0.1.0",
+  "homepage": "",
+  "author": {
+    "email": "dmj@tid.es"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://pdihub.hi.inet/TDAF/tdaf-notif.git"
+  },
+  "bugs": {
+    "url": ""
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "lib/tdaf-notif",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "dependencies": {
+      "express": "3.1.0",
+      "node-uuid": "*",
+      "async": "*",
+      "node-uuid": "*",
+      "mongoose" : "*"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.5.4",
+    "grunt-contrib-watch": "~0.2.0",
+    "grunt-gjslint": "~0.1.0",
+    "grunt": "~0.4.1",
+    "mocha": "~1.9.0",
+    "grunt-simple-mocha": "~0.4.0",
+    "chai": "~1.5.0",
+    "sinon": "~1.6.0",
+    "istanbul": "~0.1.34",
+    "grunt-exec": "~0.4.0",
+    "dox-foundation": "0.4.8",
+    "grunt-github-pages": "0.0.3",
+    "grunt-plato": "~0.2.0",
+    "request": "*"
+  },
+  "keywords": []
+}

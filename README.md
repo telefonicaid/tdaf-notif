@@ -1,4 +1,4 @@
-tdaf-notif
-==========
+tdaf-deploy
+===========
 
-Endpoint for notifications
+Generic deployment tool for the deployment of full stacks of projects
