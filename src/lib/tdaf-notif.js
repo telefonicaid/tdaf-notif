@@ -25,7 +25,7 @@
 
 
 var notifiers = require("./routes/notifierRoutes"),
-    //messages = require("./routes/messageRoutes"),
+    messages = require("./routes/messageRoutes"),
     express = require('express'),
     express = require('express'),
     config = require('./../config'),
@@ -36,9 +36,9 @@ var notifiers = require("./routes/notifierRoutes"),
 function createRoutes(app) {
     app.post('/notifier', notifiers.create);
     app.get('/notifier', notifiers.list);
-    app.get('/notifier/:name', notifiers.get);
-    app.delete('/notifier/:name', notifiers.remove);
-    //app.post('/message', messages.send);
+    app.get('/notifier/:service', notifiers.get);
+    app.delete('/notifier/:service', notifiers.remove);
+    app.post('/message', messages.send);
 }
 
 function startServer(callback) {

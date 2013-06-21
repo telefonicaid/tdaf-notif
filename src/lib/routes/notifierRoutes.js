@@ -96,7 +96,7 @@ function listNotifiers(request, response) {
  * @param response
  */
 function getNotifier(request, response) {
-    notifiers.get(request.params.name, function (error, res) {
+    notifiers.get(request.params.service, function (error, res) {
         if (error) {
             response.send(error.code, error);
         } else {
@@ -112,7 +112,7 @@ function getNotifier(request, response) {
  * @param response
  */
 function removeNotifier(request, response) {
-    notifiers.remove(request.params.name, function (error, res) {
+    notifiers.remove(request.params.service, function (error, res) {
         if (error) {
             response.send(error.code, error);
         } else {
