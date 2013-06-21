@@ -33,7 +33,8 @@ var notifiers = require("../notifiers/notifierLogic"),
  * @param callback Called with the found error in case it exists, with null otherwise.
  */
 function checkNotifierBody(body, callback) {
-    if (!body.service|| !body.pushType || !body.credentials) {
+    if (!body.service|| !body.cert || !body.key) {
+      console.log(body);
         callback({
             message: "Missing parameters in call",
             code: 400

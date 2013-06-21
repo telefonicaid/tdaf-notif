@@ -10,10 +10,9 @@ var mongoose = require('mongoose'),
  * @type {Schema}
  */
 var Notifier = new Schema({
-    id: String,
     service: String,
-    pushType: String,
-    credentials: String
+    cert: String,
+    key: String
 });
 
 module.exports = db.model('Notifier', Notifier);

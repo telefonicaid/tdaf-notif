@@ -31,19 +31,17 @@ var config = require("../../config"),
  * Create a new notifier in the system. No restrictions are imposed on the notifier contents.
  * Generates a unique ID for the notifier.
  *
- * @param notifier Body of the notifier to be created.
+ * @param data Body of the notifier to be created.
  * @param callback If no error is returned, it will be invoked with the stored notifier.
  */
-function createNotifier(notifier, callback) {
-    var id = uuid.v4(),
-        notif = new Notifier();
+function createNotifier(data, callback) {
+    var notifier = new Notifier();
 
-    notif.id = id;
-    notif.service = notifier.service;
-    notif.pushType = notifier.pushType;
-    notif.credentials = notifier.credentials;
+    notifier.service = data.service;
+    notifier.key = data.key;
+    notifier.cert = data.cert;
 
-    notif.save(function (error, res) {
+    notifier.save(function (error, res) {
         if (error) {
             callback(error);
         } else {
@@ -62,13 +60,14 @@ function listNotifiers(callback) {
 }
 
 /**
- * Get all the information about the notifier with the given name.
+ * Get all the information about the notifier for a service and a push type.
  *
- * @param name  Name of the notifier to retrieve.
+ * @param service  Service of the notifier to retrieve.
+ * @param pushType  Push type of the notifier to retrieve.
  * @param callback If there are no errors, will be called with the retrieved notifier object.
  */
-function getNotifier(id, callback) {
-    Notifier.findOne({id: id}, function (error, res) {
+function getNotifier(service, callback) {
+    Notifier.findOne({service: service}, function (error, res) {
         if (error) {
             callback({
                 code: 500,
@@ -91,8 +90,8 @@ function getNotifier(id, callback) {
  * @param id ID of the notifier to be removed.
  * @param callback If there is no error, it will be called without parameters.
  */
-function removeNotifier(id, callback) {
-    Notifier.remove({id: id}, function (error, res) {
+function removeNotifier(service, callback) {
+    Notifier.remove({service: service}, function (error, res) {
         if (error) {
             callback({
                 code: 500,
