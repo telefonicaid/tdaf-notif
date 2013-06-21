@@ -1,6 +1,6 @@
 # tdaf-notif
 
-Deployment System for TDAF products
+Notification endpoint at TDAF
 
 ## Documentation
 ### Project build
