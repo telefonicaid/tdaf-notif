@@ -1,0 +1,44 @@
+{
+  "name": "TDAF-NOTIF",
+  "version": "0.0.1",
+  "author": "Transversal Development",
+  "description": "QA TEST SET",
+  "contributors": [
+    {
+      "name": "Rush team",
+      "email": "info@tid.es"
+    }
+  ],
+  "dependencies": {
+    "express": "3.2.4",
+    "hiredis": "*",
+    "redis": "0.7.1",
+    "node-uuid": "*",
+    "async": "*",
+    "performanceFramework": "https://github.com/PDI-DGS-Protolab/performanceFramework/tarball/master"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.5.3",
+    "grunt-contrib-watch": "~0.4.3",
+    "grunt": "~0.4.1",
+    "grunt-plato": "0.2.0",
+    "mocha": "~1.9.0",
+    "grunt-simple-mocha": "~0.4.0",
+    "chai": "~1.5.0",
+    "sinon": "~1.6.0",
+    "istanbul": "~0.1.34",
+    "grunt-exec": "~0.4.0",
+    "grunt-cli": "0.1.8",
+    "request": "2.21.0",
+    "should": "1.2.0",
+    "superagent": "0.14.9"
+	
+  },
+  "license": "AGPL",
+  "engine": {
+    "node": "0.6.6"
+  },
+  "scripts": {
+    "test": "grunt test"
+  }
+}
