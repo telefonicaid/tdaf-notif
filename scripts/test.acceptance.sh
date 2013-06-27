@@ -41,6 +41,6 @@ else
 	./acceptance*.sh $test_suite $environment >logs/acceptance.log 2>&1
 fi
 
-echo "The test suite finished with status $?, check logs/acceptance.log for detailed status "
+echo "The test suite finished with status $?, check ../test/acceptance/logs/acceptance.log for detailed status "
 
 exit $?

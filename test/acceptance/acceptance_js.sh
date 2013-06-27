@@ -86,6 +86,7 @@ then
 	  echo "acceptance.js.sh: e2e Tests Execution Finished..."	
   else
   	echo "acceptance.js.sh: e2e Tests Skipped..."
+	pwd
   fi
 fi
 

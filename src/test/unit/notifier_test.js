@@ -25,6 +25,7 @@ describe('Notifier Management', function () {
   });
 
   describe('When there is a request to create a new notifier', function () {
+
     beforeEach(function (done) {
       createOptions = {
         url: 'http://localhost:' + config.endpoint.port + '/notifier',
