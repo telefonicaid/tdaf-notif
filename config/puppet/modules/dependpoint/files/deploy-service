@@ -1,0 +1,46 @@
+#!/bin/bash
+
+function status_deploy() {
+  ps -ef |grep -v grep | egrep "node.*deploy" > /dev/null
+  RESULT=$?
+
+  if [[ $RESULT = 0 ]]; then
+    echo "Tdaf Notif is running"
+  else
+    echo "Tdaf Notif is stopped"
+  fi
+
+  exit $RESULT
+}
+
+function start_deploy() {
+  ps -ef |grep -v grep | egrep "node.*deploy" > /dev/null
+  RESULT=$?
+
+  if [[ $RESULT -eq 1 ]]; then
+    nohup /opt/tdaf/deploy/bin/tdaf-notif &>> /var/log/deploy-listener.log &
+  else
+    echo "notif already running"
+  fi
+}
+
+function stop_deploy() {
+  ps -ef |grep -v grep | egrep "node.*deploy" |awk '{print $2}' |xargs -I '{}' kill '{}'
+}
+
+case "$1" in
+    start)
+        start_deploy
+    ;;
+    stop)
+        stop_deploy
+    ;;
+    restart)
+        stop_deploy
+        start_deploy
+    ;;
+    status)
+        status_deploy
+    ;;
+esac
+
