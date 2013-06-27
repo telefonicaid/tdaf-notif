@@ -13,6 +13,6 @@ Install the javascript modules in packages in the execution environment:
 
 ### 3 - TESTS EXECUTION INSTRUCTIONS
 
-Run "grunt tests" in this folder to execute the tests defined in the test folder.
+Run "./acceptance_js.sh" in this folder to execute the tests defined in the test folder.
 
 **Beware**: the acceptance tests are not meant to be run on production environments, as they make significant changes on the service that would result in data loss, service interruption, etc.
