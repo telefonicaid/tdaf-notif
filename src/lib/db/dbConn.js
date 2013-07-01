@@ -19,7 +19,10 @@ var
 function createConn() {
     var db = mongoose.createConnection(config.mongo.host, config.mongo.db);
     db.db.serverConfig.options.auto_reconnect = true;
-    db.on('error', console.error.bind(console, 'connection error:'));
+    db.on('error', function (error) {
+        console.error("Error connecting to the db: " + error);
+        process.exit(1);
+    });
 
     return db;
 }
